@@ -33,4 +33,11 @@ public class HomePage extends CommonActionOnPages {
         clickOnWithExplicitWait(register);
     }
 
+    /**
+     * TODO: Especificar metodo login
+    public void login(){
+
+    }
+     */
+
 }

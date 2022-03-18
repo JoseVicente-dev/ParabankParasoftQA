@@ -27,7 +27,6 @@ public class RegisterParabankStepDefinitions extends WebUI {
 
             homePage = new HomePage(driver,5,true);
             homePage.goToRegisterForm();
-            System.out.println("Test1");
 
         } catch (Exception exception) {
             quitDriver();
@@ -58,8 +57,8 @@ public class RegisterParabankStepDefinitions extends WebUI {
 
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
-        System.out.println("Resultado1");
-        //quitDriver();
+
+        quitDriver();
     }
 
     @Given("que estoy en la pagina de registro")
