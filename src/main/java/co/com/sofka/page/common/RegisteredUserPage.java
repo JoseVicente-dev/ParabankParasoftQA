@@ -6,13 +6,11 @@ import org.openqa.selenium.WebDriver;
 
 public class RegisteredUserPage extends CommonActionOnPages{
 
-    private RegisterFormPageModel registerFormPageModel;
-    private String registeredUserXpath;
 
-    public RegisteredUserPage(WebDriver driver, int seconds, boolean isExplicitWait, RegisterFormPageModel registerFormPageModel) {
+
+    public RegisteredUserPage(WebDriver driver, int seconds, boolean isExplicitWait) {
         super(driver, seconds, isExplicitWait);
-        this.registerFormPageModel=registerFormPageModel;
-        defineRegisteredUserXpath(registerFormPageModel.getUsername());
+
     }
 
 
@@ -25,8 +23,5 @@ public class RegisteredUserPage extends CommonActionOnPages{
 
     }
 
-    private void defineRegisteredUserXpath(String username){
-        this.registeredUserXpath =  "//h1[contains(.,'Welcome "+username+"']";
-    }
 
 }
