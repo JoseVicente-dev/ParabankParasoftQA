@@ -12,6 +12,12 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     private RegisterFormPageModel registerFormPageModel;
 
+    public RegisterFormPage(WebDriver driver, RegisterFormPageModel registerFormPageModel) {
+        super(driver);
+        PageFactoryInitElement(driver,this);
+        this.registerFormPageModel = registerFormPageModel;
+    }
+
     public RegisterFormPage(WebDriver driver, int seconds, boolean isExplicitWait, RegisterFormPageModel registerFormPageModel) {
         super(driver, seconds, isExplicitWait);
         PageFactoryInitElement(driver,this);
@@ -131,6 +137,7 @@ public class RegisterFormPage extends CommonActionOnPages {
         clickOnWithExplicitWait(confirmPassword);
         typeOnWithExplicitWait(confirmPassword, registerFormPageModel.getConfirmPassword());
 
+        scrollOnWithExplicitWait(registerBtn);
         doSubmitWithExplicitWait(registerBtn);
 
     }
@@ -138,5 +145,6 @@ public class RegisterFormPage extends CommonActionOnPages {
     public String errorUserNameAlreadyExists(WebDriver driver){
         return driver.findElement(assertionsUsernameError).getText().trim();
     }
+
 
 }

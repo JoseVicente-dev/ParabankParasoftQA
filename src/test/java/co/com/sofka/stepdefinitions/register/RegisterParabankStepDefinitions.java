@@ -32,7 +32,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 5, true);
+            homePage = new HomePage(driver, 5, true, null);
             homePage.goToRegisterForm();
 
         } catch (Exception exception) {
@@ -90,7 +90,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 5, true);
+            homePage = new HomePage(driver, 5, true, null);
             homePage.goToRegisterForm();
 
         } catch (Exception exception) {
