@@ -79,8 +79,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
 
         registeredUserPage = new RegisteredUserPage(driver,10,true,registerFormPageModel);
         Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()),registeredUserPage.isRegistrationDone(driver));
-
-        //quitDriver();
+        quitDriver();
     }
     /**
     @Given("que estoy en la pagina de registro")
