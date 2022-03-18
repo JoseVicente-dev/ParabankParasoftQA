@@ -1,9 +1,12 @@
 package co.com.sofka.stepdefinitions.register;
 
+import co.com.sofka.model.RegisterFormPageModel;
 import co.com.sofka.page.HomePage;
+import co.com.sofka.page.RegisterFormPage;
+import co.com.sofka.page.common.RegisteredUserPage;
 import co.com.sofka.runners.RegisterParabankTest;
 import co.com.sofka.stepdefinitions.setup.WebUI;
-import co.com.sofka.util.Register;
+import co.com.sofka.util.RegisterForm;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,6 +19,9 @@ public class RegisterParabankStepDefinitions extends WebUI {
 
     private static final Logger LOGGER = Logger.getLogger(RegisterParabankTest.class);
     HomePage homePage;
+    RegisterFormPageModel registerFormPageModel;
+    RegisterFormPage registerFormPage;
+    RegisteredUserPage registeredUserPage;
 
 
     @Given("que estoy en la pagina de registro de la plataforma")
@@ -44,9 +50,22 @@ public class RegisterParabankStepDefinitions extends WebUI {
 
         try {
 
-            System.out.println("dataTable print "+dataTable);
-            System.out.println("toString "+dataTable.toString());
-            System.out.println("value from key "+dataTable.get(Register.FIRST_NAME.getValue()));
+            registerFormPageModel = new RegisterFormPageModel();
+            registerFormPageModel.setFirstName(dataTable.get(RegisterForm.FIRST_NAME.getValue()));
+            registerFormPageModel.setLastName(dataTable.get(RegisterForm.LAST_NAME.getValue()));
+            registerFormPageModel.setAddress(dataTable.get(RegisterForm.ADDRESS.getValue()));
+            registerFormPageModel.setCity(dataTable.get(RegisterForm.CITY.getValue()));
+            registerFormPageModel.setState(dataTable.get(RegisterForm.STATE.getValue()));
+            registerFormPageModel.setZipCode(dataTable.get(RegisterForm.ZIP_CODE.getValue()));
+            registerFormPageModel.setPhoneNumber(dataTable.get(RegisterForm.PHONE_NUMBER.getValue()));
+            registerFormPageModel.setSsn(dataTable.get(RegisterForm.SSN.getValue()));
+            registerFormPageModel.setUsername(dataTable.get(RegisterForm.USERNAME.getValue()));
+            registerFormPageModel.setPassword(dataTable.get(RegisterForm.PASSWORD.getValue()));
+            registerFormPageModel.setConfirmPassword(dataTable.get(RegisterForm.CONFIRM_PASSWORD.getValue()));
+
+            registerFormPage = new RegisterFormPage(driver,10,true, registerFormPageModel);
+            registerFormPage.fillRegisterForm();
+
 
         } catch (Exception exception) {
             quitDriver();
@@ -58,13 +77,16 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
 
-        quitDriver();
-    }
+        registeredUserPage = new RegisteredUserPage(driver,10,true,registerFormPageModel);
+        Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()),registeredUserPage.isRegistrationDone(driver));
 
+        //quitDriver();
+    }
+    /**
     @Given("que estoy en la pagina de registro")
     public void queEstoyEnLaPaginaDeRegistro() {
         try {
-            System.out.println("Test2");
+
 
         } catch (Exception exception) {
             quitDriver();
@@ -90,9 +112,16 @@ public class RegisterParabankStepDefinitions extends WebUI {
     }
     @Then("se mostrara un mensaje de error indicando que el Username diligenciado ya existe y no se podra crear el usuario")
     public void seMostraraUnMensajeDeErrorIndicandoQueElUsernameDiligenciadoYaExisteYNoSePodraCrearElUsuario() {
-        System.out.println("Resultado2");
+
         quitDriver();
     }
+     */
+
+    private String forRegisterAssertions(String username){
+        return "Welcome "+username;
+    }
+
+
 
 
 

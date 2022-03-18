@@ -2,6 +2,7 @@ package co.com.sofka.page;
 
 import co.com.sofka.model.RegisterFormPageModel;
 import co.com.sofka.page.common.CommonActionOnPages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -11,9 +12,10 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     private RegisterFormPageModel registerFormPageModel;
 
-    public RegisterFormPage(WebDriver driver, int seconds, boolean isExplicitWait) {
+    public RegisterFormPage(WebDriver driver, int seconds, boolean isExplicitWait, RegisterFormPageModel registerFormPageModel) {
         super(driver, seconds, isExplicitWait);
         PageFactoryInitElement(driver,this);
+        this.registerFormPageModel = registerFormPageModel;
     }
 
     @FindBy (id="customer.firstName")
@@ -67,6 +69,9 @@ public class RegisterFormPage extends CommonActionOnPages {
     //For assertions
     @FindBy(id="customer.username.errors")
     private WebElement usernameError;
+
+
+
 
     //Funcionalidades del Page
     public void fillRegisterForm(){
@@ -126,9 +131,10 @@ public class RegisterFormPage extends CommonActionOnPages {
         clickOnWithExplicitWait(confirmPassword);
         typeOnWithExplicitWait(confirmPassword, registerFormPageModel.getConfirmPassword());
 
-        doSubmit(registerBtn);
+        doSubmitWithExplicitWait(registerBtn);
 
     }
+
 
 
 }
