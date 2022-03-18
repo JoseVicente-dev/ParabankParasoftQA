@@ -2,6 +2,7 @@ package co.com.sofka.page;
 
 import co.com.sofka.model.RegisterFormPageModel;
 import co.com.sofka.page.common.CommonActionOnPages;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 public class RegisterFormPage extends CommonActionOnPages {
+
+    private static final Logger LOGGER = Logger.getLogger(RegisterFormPage.class);
 
     private RegisterFormPageModel registerFormPageModel;
 

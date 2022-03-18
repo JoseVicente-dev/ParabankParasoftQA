@@ -1,6 +1,6 @@
 package co.com.sofka.page;
 
-import co.com.sofka.model.LoginPageModel;
+import co.com.sofka.model.HomePageModel;
 import co.com.sofka.page.common.CommonActionOnPages;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -12,18 +12,18 @@ public class HomePage extends CommonActionOnPages {
 
     private static final Logger LOGGER = Logger.getLogger(HomePage.class);
 
-    private LoginPageModel loginPageModel;
+    private HomePageModel homePageModel;
 
-    public HomePage(WebDriver driver, LoginPageModel loginPageModel) {
+    public HomePage(WebDriver driver, HomePageModel homePageModel) {
         super(driver);
         PageFactoryInitElement(driver,this);
-        this.loginPageModel = loginPageModel;
+        this.homePageModel = homePageModel;
     }
 
-    public HomePage(WebDriver driver, int seconds, boolean isExplicitWait, LoginPageModel loginPageModel) {
+    public HomePage(WebDriver driver, int seconds, boolean isExplicitWait, HomePageModel homePageModel) {
         super(driver, seconds, isExplicitWait);
         PageFactoryInitElement(driver,this);
-        this.loginPageModel=loginPageModel;
+        this.homePageModel = homePageModel;
     }
 
     //For register test scenarios
@@ -55,12 +55,12 @@ public class HomePage extends CommonActionOnPages {
         scrollOnWithExplicitWait(username);
         clearOnWithExplicitWait(username);
         clickOnWithExplicitWait(username);
-        typeOnWithExplicitWait(username,loginPageModel.getUsername());
+        typeOnWithExplicitWait(username, homePageModel.getUsername());
 
         scrollOnWithExplicitWait(password);
         clearOnWithExplicitWait(password);
         clickOnWithExplicitWait(password);
-        typeOnWithExplicitWait(password, loginPageModel.getPassword());
+        typeOnWithExplicitWait(password, homePageModel.getPassword());
 
         scrollOnWithExplicitWait(loginBtn);
         doSubmitWithExplicitWait(loginBtn);

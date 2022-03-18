@@ -1,17 +1,17 @@
 package co.com.sofka.util.enums;
 
-public enum Login {
+public enum LoginForm {
 
     USERNAME("username"),
     PASSWORD("password");
 
     private final String value;
 
-    Login(String value) {
+    LoginForm(String value) {
         this.value=value;
     }
 
     public String getValue() {
-        return value;
+        return this.value;
     }
 }

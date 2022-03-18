@@ -1,6 +1,6 @@
 package co.com.sofka.model;
 
-public class LoginPageModel {
+public class HomePageModel {
 
     private String username;
     private String password;

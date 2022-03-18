@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class RegisterParabankStepDefinitions extends WebUI {
 
-    private static final Logger LOGGER = Logger.getLogger(RegisterParabankTest.class);
+    private static final Logger LOGGER = Logger.getLogger(RegisterParabankStepDefinitions.class);
     HomePage homePage;
     RegisterFormPageModel registerFormPageModel;
     RegisterFormPage registerFormPage;
@@ -32,7 +32,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 5, true, null);
+            homePage = new HomePage(driver, 10, true, null);
             homePage.goToRegisterForm();
 
         } catch (Exception exception) {
@@ -78,7 +78,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
 
-        registeredUserPage = new RegisteredUserPage(driver, 10, true);
+        registeredUserPage = new RegisteredUserPage(driver);
         Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()).get(0), registeredUserPage.isRegistrationDone(driver));
         quitDriver();
     }
@@ -90,7 +90,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 5, true, null);
+            homePage = new HomePage(driver, 10, true, null);
             homePage.goToRegisterForm();
 
         } catch (Exception exception) {
