@@ -1,0 +1,13 @@
+{
+  "firstName": "[firstName]",
+  "lastName": "[lastName]",
+  "address": "[address]",
+  "city": "[city]",
+  "state": "[state]",
+  "zipCode": "[zipCode]",
+  "phoneNumber": "[phoneNumber]",
+  "ssn": "[ssn]",
+  "username": "[username]",
+  "password": "[password]",
+  "confirmPassword": "[confirmPassword]"
+}
