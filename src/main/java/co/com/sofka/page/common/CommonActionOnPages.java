@@ -1,4 +1,4 @@
-package co.com.sofka.common;
+package co.com.sofka.page.common;
 
 
 import org.apache.log4j.Logger;
@@ -57,7 +57,7 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     //Constructor con parámetro que define el tipo de tiempo de espera
-    public CommonActionOnPages(WebDriver driver, int seconds, boolean isExplicitTime) {
+    public CommonActionOnPages(WebDriver driver, int seconds, boolean isExplicitWait) {
         try {
 
             if (driver == null) {
@@ -65,7 +65,7 @@ public class CommonActionOnPages extends BaseSikulix {
             } else {
                 this.driver = driver;
 
-                if (isExplicitTime) {
+                if (isExplicitWait) {
 
                     setWebDriverExplicitWait(driver, seconds);
                 } else {
@@ -83,7 +83,6 @@ public class CommonActionOnPages extends BaseSikulix {
         PageFactory.initElements(driver, page);
     }
 
-
     //Funcionalidades
     protected void clickOn(By localizador) {
         driver.findElement(localizador).click();
@@ -94,11 +93,11 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     protected void clickOnWithExplicitWait(By localizador) {
-        driver.findElement(localizador).click();
+        webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)).click();
     }
 
     protected void clickOnWithExplicitWait(WebElement webElement) {
-        webElement.click();
+        webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
     }
 
     protected void clearOn(By localizador) {
@@ -126,11 +125,11 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     protected void typeOnWithExplicitWait(By localizador, CharSequence... keysToSend) {
-        driver.findElement(localizador).sendKeys(keysToSend);
+        webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)).sendKeys(keysToSend);
     }
 
     protected void typeOnWithExplicitWait(WebElement webElement, CharSequence... keysToSend) {
-        webElement.sendKeys(keysToSend);
+        webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)).sendKeys(keysToSend);
     }
 
     protected void scrollOn(WebElement webElement) {
@@ -145,12 +144,12 @@ public class CommonActionOnPages extends BaseSikulix {
 
     protected void scrollOnWithExplicitWait(WebElement webElement) {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView()", webElement);
+        jse.executeScript("arguments[0].scrollIntoView()", webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)));
     }
 
     protected void scrollOnWithExplicitWait(By localizador) {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView()", driver.findElement(localizador));
+        jse.executeScript("arguments[0].scrollIntoView()", webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)));
     }
 
     protected void doSubmit(By localizador) {
@@ -162,11 +161,11 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     protected void doSubmitWithExplicitWait(By localizador) {
-        driver.findElement(localizador).submit();
+        webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)).submit();
     }
 
     protected void doSubmitWithExplicitWait(WebElement webElement) {
-        webElement.submit();
+        webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)).submit();
     }
 
     protected String getText(By localizador) {
@@ -178,10 +177,10 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     protected String getTextWithExplicitWait(By localizador) {
-        return driver.findElement(localizador).getText();
+        return webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)).getText();
     }
 
     protected String getTextWithExplicitWait(WebElement webElement) {
-        return webElement.getText();
+        return webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)).getText();
     }
 }

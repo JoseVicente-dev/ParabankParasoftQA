@@ -1,8 +1,7 @@
-package co.com.sofka.common;
+package co.com.sofka.page.common;
 
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebElement;
 import org.sikuli.script.Screen;
 
 public class BaseSikulix {

@@ -3,7 +3,6 @@ Feature: Registrarse en la plataforma
   I want to registrarme en la plataforma
   So that yo pueda administrar mis productos financieros en linea
 
-  @Register
   Scenario: Crear un nuevo usuario
     Given que estoy en la pagina de registro de la plataforma
     When diligencie mi informacion personal necesaria

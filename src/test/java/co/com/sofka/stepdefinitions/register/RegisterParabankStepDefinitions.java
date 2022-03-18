@@ -1,5 +1,6 @@
 package co.com.sofka.stepdefinitions.register;
 
+import co.com.sofka.page.HomePage;
 import co.com.sofka.runners.RegisterParabankTest;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.Register;
@@ -9,16 +10,23 @@ import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.List;
 import java.util.Map;
 
 public class RegisterParabankStepDefinitions extends WebUI {
 
     private static final Logger LOGGER = Logger.getLogger(RegisterParabankTest.class);
+    HomePage homePage;
+
 
     @Given("que estoy en la pagina de registro de la plataforma")
     public void queEstoyEnLaPaginaDeRegistroDeLaPlataforma() {
         try {
+            setUpLog4j2();
+            setUpWebDriver();
+            generalSetUp();
+
+            homePage = new HomePage(driver,5,true);
+            homePage.goToRegisterForm();
             System.out.println("Test1");
 
         } catch (Exception exception) {
@@ -41,8 +49,6 @@ public class RegisterParabankStepDefinitions extends WebUI {
             System.out.println("toString "+dataTable.toString());
             System.out.println("value from key "+dataTable.get(Register.FIRST_NAME.getValue()));
 
-
-
         } catch (Exception exception) {
             quitDriver();
             Assertions.fail(exception.getMessage(), exception);
@@ -53,7 +59,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
         System.out.println("Resultado1");
-        quitDriver();
+        //quitDriver();
     }
 
     @Given("que estoy en la pagina de registro")
