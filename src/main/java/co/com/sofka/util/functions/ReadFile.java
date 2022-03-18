@@ -1,4 +1,4 @@
-package co.com.sofka.util;
+package co.com.sofka.util.functions;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -25,19 +25,42 @@ public class HomePage extends CommonActionOnPages {
     //For register test scenarios
     @FindBy(linkText = "Register")
     @CacheLookup
-    private WebElement register;
+    private WebElement registerLink;
+
+    //for login test scenarios
+    @FindBy(name = "username")
+    @CacheLookup
+    private WebElement username;
+
+     @FindBy(name = "password")
+     @CacheLookup
+     private WebElement password;
+
+     @FindBy(css = ".button:nth-child(1)")
+     @CacheLookup
+     private WebElement loginBtn;
 
     //Funcionalidades del Page
     public void goToRegisterForm(){
-        scrollOnWithExplicitWait(register);
-        clickOnWithExplicitWait(register);
+        scrollOnWithExplicitWait(registerLink);
+        clickOnWithExplicitWait(registerLink);
     }
 
-    /**
-     * TODO: Especificar metodo login
     public void login(){
 
+        scrollOnWithExplicitWait(username);
+        clearOnWithExplicitWait(username);
+        clickOnWithExplicitWait(username);
+        typeOnWithExplicitWait(username);
+
+        scrollOnWithExplicitWait(password);
+        clearOnWithExplicitWait(password);
+        clickOnWithExplicitWait(password);
+        typeOnWithExplicitWait(password);
+
+        scrollOnWithExplicitWait(loginBtn);
+        clickOnWithExplicitWait(loginBtn);
     }
-     */
+
 
 }

@@ -1,4 +1,4 @@
-package co.com.sofka.util;
+package co.com.sofka.util.enums;
 
 public enum Seconds {
 

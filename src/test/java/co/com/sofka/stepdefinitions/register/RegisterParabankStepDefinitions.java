@@ -6,7 +6,7 @@ import co.com.sofka.page.RegisterFormPage;
 import co.com.sofka.page.RegisteredUserPage;
 import co.com.sofka.runners.RegisterParabankTest;
 import co.com.sofka.stepdefinitions.setup.WebUI;
-import co.com.sofka.util.RegisterForm;
+import co.com.sofka.util.enums.RegisterForm;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
