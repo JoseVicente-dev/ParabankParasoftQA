@@ -1,4 +1,4 @@
-package co.com.sofka.page;
+package co.com.sofka.page.pages;
 
 import co.com.sofka.page.common.CommonActionOnPages;
 import org.apache.log4j.Logger;

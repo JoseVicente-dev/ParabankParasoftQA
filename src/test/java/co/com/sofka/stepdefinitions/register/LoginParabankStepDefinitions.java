@@ -1,9 +1,9 @@
 package co.com.sofka.stepdefinitions.register;
 
 import co.com.sofka.model.HomePageModel;
-import co.com.sofka.page.AccountsOverviewPage;
-import co.com.sofka.page.HomePage;
-import co.com.sofka.page.LoginErrorPage;
+import co.com.sofka.page.pages.AccountsOverviewPage;
+import co.com.sofka.page.pages.HomePage;
+import co.com.sofka.page.pages.LoginErrorPage;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.enums.LoginForm;
 import io.cucumber.java.en.Then;

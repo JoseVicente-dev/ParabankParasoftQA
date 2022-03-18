@@ -1,10 +1,9 @@
 package co.com.sofka.stepdefinitions.register;
 
 import co.com.sofka.model.RegisterFormPageModel;
-import co.com.sofka.page.HomePage;
-import co.com.sofka.page.RegisterFormPage;
-import co.com.sofka.page.RegisteredUserPage;
-import co.com.sofka.runners.RegisterParabankTest;
+import co.com.sofka.page.pages.HomePage;
+import co.com.sofka.page.pages.RegisterFormPage;
+import co.com.sofka.page.pages.RegisteredUserPage;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.enums.RegisterForm;
 import io.cucumber.java.en.Given;

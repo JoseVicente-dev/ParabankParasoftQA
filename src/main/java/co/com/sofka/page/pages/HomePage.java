@@ -1,4 +1,4 @@
-package co.com.sofka.page;
+package co.com.sofka.page.pages;
 
 import co.com.sofka.model.HomePageModel;
 import co.com.sofka.page.common.CommonActionOnPages;

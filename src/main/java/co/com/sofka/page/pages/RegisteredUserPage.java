@@ -1,6 +1,5 @@
-package co.com.sofka.page;
+package co.com.sofka.page.pages;
 
-import co.com.sofka.model.RegisterFormPageModel;
 import co.com.sofka.page.common.CommonActionOnPages;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
