@@ -57,10 +57,9 @@ public class LoginParabankStepDefinitions extends WebUI {
     @Then("podre consultar el estado de mis poductos")
     public void podreConsultarElEstadoDeMisPoductos() {
 
-        accountsOverviewPage = new AccountsOverviewPage(driver);
+        accountsOverviewPage = new AccountsOverviewPage(driver,5,false);
         Assertions.assertEquals(forLoginAssertions().get(0), accountsOverviewPage.isLoginDone());
         quitDriver();
-
     }
 
 
@@ -74,7 +73,6 @@ public class LoginParabankStepDefinitions extends WebUI {
 
             homePageModel = new HomePageModel();
             homePageModel.setUsername(dataTable.get(LoginForm.USERNAME.getValue()));
-            homePageModel.setPassword(dataTable.get(LoginForm.PASSWORD.getValue()));
 
             homePage = new HomePage(driver, 10, true, homePageModel);
             homePage.login();
@@ -90,7 +88,7 @@ public class LoginParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje de error y no podre ingrear al aplicativo")
     public void seMostraraUnMensajeDeErrorYNoPodreIngrearAlAplicativo() {
 
-        loginErrorPage = new LoginErrorPage(driver);
+        loginErrorPage = new LoginErrorPage(driver,5,false);
         Assertions.assertEquals(forLoginAssertions().get(1),loginErrorPage.loginFailed());
 
         quitDriver();

@@ -16,13 +16,13 @@ public class HomePage extends CommonActionOnPages {
 
     public HomePage(WebDriver driver, HomePageModel homePageModel) {
         super(driver);
-        PageFactoryInitElement(driver,this);
+        PageFactoryInitElement(driver, this);
         this.homePageModel = homePageModel;
     }
 
     public HomePage(WebDriver driver, int seconds, boolean isExplicitWait, HomePageModel homePageModel) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver,this);
+        PageFactoryInitElement(driver, this);
         this.homePageModel = homePageModel;
     }
 
@@ -36,21 +36,21 @@ public class HomePage extends CommonActionOnPages {
     @CacheLookup
     private WebElement username;
 
-     @FindBy(name = "password")
-     @CacheLookup
-     private WebElement password;
+    @FindBy(name = "password")
+    @CacheLookup
+    private WebElement password;
 
-     @FindBy(css = ".button:nth-child(1)")
-     @CacheLookup
-     private WebElement loginBtn;
+    @FindBy(css = ".button:nth-child(1)")
+    @CacheLookup
+    private WebElement loginBtn;
 
     //Funcionalidades del Page
-    public void goToRegisterForm(){
+    public void goToRegisterForm() {
         scrollOnWithExplicitWait(registerLink);
         clickOnWithExplicitWait(registerLink);
     }
 
-    public void login(){
+    public void login() {
 
         scrollOnWithExplicitWait(username);
         clearOnWithExplicitWait(username);
@@ -60,7 +60,12 @@ public class HomePage extends CommonActionOnPages {
         scrollOnWithExplicitWait(password);
         clearOnWithExplicitWait(password);
         clickOnWithExplicitWait(password);
-        typeOnWithExplicitWait(password, homePageModel.getPassword());
+
+        if (homePageModel.getPassword() != null) {
+            typeOnWithExplicitWait(password, homePageModel.getPassword());
+        }else {
+            typeOnWithExplicitWait(password,"");
+        }
 
         scrollOnWithExplicitWait(loginBtn);
         doSubmitWithExplicitWait(loginBtn);

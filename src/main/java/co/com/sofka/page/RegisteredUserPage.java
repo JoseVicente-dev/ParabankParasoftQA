@@ -10,8 +10,10 @@ public class RegisteredUserPage extends CommonActionOnPages {
 
     private static final Logger LOGGER = Logger.getLogger(RegisteredUserPage.class);
 
-    public RegisteredUserPage(WebDriver driver) {
-        super(driver);
+
+    public RegisteredUserPage(WebDriver driver, int seconds, boolean isExplicitWait) {
+        super(driver, seconds, isExplicitWait);
+        PageFactoryInitElement(driver,this);
     }
 
     //For registered user Assertions

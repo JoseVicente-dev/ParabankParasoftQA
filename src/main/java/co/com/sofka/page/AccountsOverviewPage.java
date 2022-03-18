@@ -10,15 +10,16 @@ import org.openqa.selenium.support.FindBy;
 public class AccountsOverviewPage extends CommonActionOnPages {
     private static final Logger LOGGER = Logger.getLogger(AccountsOverviewPage.class);
 
-    public AccountsOverviewPage(WebDriver driver) {
-        super(driver);
+    public AccountsOverviewPage(WebDriver driver, int seconds, boolean isExplicitWait) {
+        super(driver, seconds, isExplicitWait);
         PageFactoryInitElement(driver,this);
     }
 
     //For login assertions
-    @FindBy
+    @FindBy(css = ".title")
     @CacheLookup
     private WebElement titleAccountsOverview;
+
 
     public String isLoginDone(){
         return titleAccountsOverview.getText().trim();

@@ -78,7 +78,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
 
-        registeredUserPage = new RegisteredUserPage(driver);
+        registeredUserPage = new RegisteredUserPage(driver,5,false);
         Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()).get(0), registeredUserPage.isRegistrationDone(driver));
         quitDriver();
     }

@@ -12,7 +12,6 @@ Feature: Ingresar
   Scenario: Intentar ingresar al aplicativo sin password
     When ingrese credenciales omitiendo el password
       | username | Mr.Dentist |
-      | password |  |
     Then se mostrara un mensaje de error y no podre ingrear al aplicativo
 
 
