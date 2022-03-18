@@ -6,16 +6,12 @@ import org.openqa.selenium.WebDriver;
 
 public class RegisteredUserPage extends CommonActionOnPages{
 
-
-
     public RegisteredUserPage(WebDriver driver, int seconds, boolean isExplicitWait) {
         super(driver, seconds, isExplicitWait);
-
     }
 
-
+    //For registered user Assertions
     private final By assertionsUserRegistered  = By.xpath("//div[@id='rightPanel']/h1");
-
 
     public String isRegistrationDone(WebDriver driver){
 

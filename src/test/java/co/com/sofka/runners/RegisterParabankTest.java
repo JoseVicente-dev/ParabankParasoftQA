@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        publish = false,
+        publish = true,
         features = {"src/test/resources/features/registerParabank.feature"},
         glue = {"co.com.sofka.stepdefinitions"}
 )
