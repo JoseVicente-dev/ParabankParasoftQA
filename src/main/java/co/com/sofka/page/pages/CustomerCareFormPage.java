@@ -8,16 +8,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-public class CustomerCarePage extends CommonActionOnPages {
+import java.util.ArrayList;
+import java.util.List;
 
-    private static final Logger LOGGER = Logger.getLogger(CustomerCarePage.class);
+public class CustomerCareFormPage extends CommonActionOnPages {
+
+    private static final Logger LOGGER = Logger.getLogger(CustomerCareFormPage.class);
 
     CustomerCareFormModel customerCareFormModel;
 
-    public CustomerCarePage(WebDriver driver, int seconds, boolean isExplicitWait, CustomerCareFormModel customerCareFormModel) {
+    public CustomerCareFormPage(WebDriver driver, int seconds, boolean isExplicitWait, CustomerCareFormModel customerCareFormModel) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver,this);
-        this.customerCareFormModel=customerCareFormModel;
+        PageFactoryInitElement(driver, this);
+        this.customerCareFormModel = customerCareFormModel;
     }
 
     //For customer care scenarios
@@ -42,13 +45,18 @@ public class CustomerCarePage extends CommonActionOnPages {
     private WebElement sendToCustomerCareBtn;
 
     //For assertions
-    @FindBy(css = "#rightPanel")
-    @CacheLookup
+    @FindBy(css = "#rightPanel > p:nth-child(2)")
     private WebElement assertionsThankYouMessage;
+
+    @FindBy(id = "email.errors")
+    private WebElement assertionsEmailError;
+
+    @FindBy(id = "phone.errors")
+    private WebElement assertionsPhoneError;
 
 
     //Funcionalidades del Page
-    public void fillCustomerCareForm(){
+    public void fillCustomerCareForm() {
         scrollOnWithExplicitWait(name);
         clearOnWithExplicitWait(name);
         clickOnWithExplicitWait(name);
@@ -57,12 +65,20 @@ public class CustomerCarePage extends CommonActionOnPages {
         scrollOnWithExplicitWait(email);
         clearOnWithExplicitWait(email);
         clickOnWithExplicitWait(email);
-        typeOnWithExplicitWait(email, customerCareFormModel.getEmail());
+        if (customerCareFormModel.getEmail() != null) {
+            typeOnWithExplicitWait(email, customerCareFormModel.getEmail());
+        } else {
+            typeOnWithExplicitWait(email, "");
+        }
 
         scrollOnWithExplicitWait(phone);
         clearOnWithExplicitWait(phone);
         clickOnWithExplicitWait(phone);
-        typeOnWithExplicitWait(phone, customerCareFormModel.getPhone());
+        if (customerCareFormModel.getEmail() != null) {
+            typeOnWithExplicitWait(phone, customerCareFormModel.getPhone());
+        } else {
+            typeOnWithExplicitWait(email, "");
+        }
 
         scrollOnWithExplicitWait(message);
         clearOnWithExplicitWait(message);
@@ -73,5 +89,14 @@ public class CustomerCarePage extends CommonActionOnPages {
         clickOnWithExplicitWait(sendToCustomerCareBtn);
     }
 
+    public String isCustomerCareMessageSend() {
+        return assertionsThankYouMessage.getText().trim();
+    }
+
+    public String errorContactInformationIsRequired() {
+
+        return  assertionsEmailError.getText().trim() +" "+ assertionsPhoneError.getText().trim();
+
+    }
 
 }

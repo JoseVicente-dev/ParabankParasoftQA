@@ -81,8 +81,6 @@ public class RegisterParabankStepDefinitions extends WebUI {
         quitDriver();
     }
 
-
-
     @Given("que estoy en la pagina de registro")
     public void queEstoyEnLaPaginaDeRegistro() {
         try {
