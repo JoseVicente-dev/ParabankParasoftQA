@@ -77,10 +77,7 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     //For assertions
     @FindBy(id="customer.username.errors")
-    private WebElement usernameError;
-
-    //For username errors Assertions
-    private final By assertionsUsernameError = By.id("customer.username.errors");
+    private WebElement assertionsUsernameError;
 
     //Funcionalidades del Page
     public void fillRegisterForm(){
@@ -145,8 +142,8 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     }
 
-    public String errorUserNameAlreadyExists(WebDriver driver){
-        return driver.findElement(assertionsUsernameError).getText().trim();
+    public String errorUserNameAlreadyExists(){
+        return assertionsUsernameError.getText().trim();
     }
 
 

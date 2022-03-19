@@ -5,12 +5,12 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RegisteredUserPage extends CommonActionOnPages {
+public class CreatedUserPage extends CommonActionOnPages {
 
-    private static final Logger LOGGER = Logger.getLogger(RegisteredUserPage.class);
+    private static final Logger LOGGER = Logger.getLogger(CreatedUserPage.class);
 
 
-    public RegisteredUserPage(WebDriver driver, int seconds, boolean isExplicitWait) {
+    public CreatedUserPage(WebDriver driver, int seconds, boolean isExplicitWait) {
         super(driver, seconds, isExplicitWait);
         PageFactoryInitElement(driver,this);
     }

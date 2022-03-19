@@ -44,10 +44,21 @@ public class HomePage extends CommonActionOnPages {
     @CacheLookup
     private WebElement loginBtn;
 
+    //For Customer Care scenarios
+    @FindBy(linkText = "contact")
+    @CacheLookup
+    private WebElement customerCareLink;
+
     //Funcionalidades del Page
     public void goToRegisterForm() {
         scrollOnWithExplicitWait(registerLink);
         clickOnWithExplicitWait(registerLink);
+    }
+
+    public void goToCustomerCareForm(){
+        scrollOnWithExplicitWait(customerCareLink);
+        clickOnWithExplicitWait(customerCareLink);
+
     }
 
     public void login() {
