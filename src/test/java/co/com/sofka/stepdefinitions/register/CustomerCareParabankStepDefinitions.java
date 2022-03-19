@@ -24,7 +24,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
     CustomerCareFormModel customerCareFormModel;
     CustomerCareFormPage customerCareFormPage;
 
-
     @Given("que estoy en la seccion Custom Care")
     public void queEstoyEnLaSeccionCustomCare() {
         try {
@@ -40,7 +39,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
         }
-
     }
 
     @When("diligencie mi PQRS y la envie")
@@ -62,7 +60,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
 
             customerCareFormPage = new CustomerCareFormPage(driver,Seconds.TEN_SECONDS.getValue(),true,customerCareFormModel);
             customerCareFormPage.fillCustomerCareForm();
-
 
         } catch (Exception exception) {
             quitDriver();
@@ -120,7 +117,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
     public void noSePodraEnviarLaPQRS() {
 
         Assertions.assertEquals(forCustomerCareAssertions(customerCareFormModel.getName()).get(1),customerCareFormPage.errorContactInformationIsRequired());
-
         quitDriver();
     }
 

@@ -83,7 +83,6 @@ public class LoginParabankStepDefinitions extends WebUI {
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
         }
-
     }
 
     @Then("se mostrara un mensaje de error y no podre ingrear al aplicativo")
@@ -91,7 +90,6 @@ public class LoginParabankStepDefinitions extends WebUI {
 
         loginErrorPage = new LoginErrorPage(driver,Seconds.FIVE_SECONDS.getValue(),false);
         Assertions.assertEquals(forLoginAssertions().get(1),loginErrorPage.loginFailed());
-
         quitDriver();
     }
 
@@ -101,6 +99,4 @@ public class LoginParabankStepDefinitions extends WebUI {
         loginExpectedResults.add("Please enter a username and password.");
         return loginExpectedResults;
     }
-
-
 }

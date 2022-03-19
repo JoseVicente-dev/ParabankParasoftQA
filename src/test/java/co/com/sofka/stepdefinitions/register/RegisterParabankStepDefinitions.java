@@ -23,7 +23,6 @@ public class RegisterParabankStepDefinitions extends WebUI {
     RegisterFormPageModel registerFormPageModel;
     RegisterFormPage registerFormPage;
 
-
     @Given("que estoy en la pagina de registro de la plataforma")
     public void queEstoyEnLaPaginaDeRegistroDeLaPlataforma() {
         try {
@@ -77,10 +76,10 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
 
-
         Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()).get(0), registerFormPage.isRegistrationDone());
         quitDriver();
     }
+
 
     @Given("que estoy en la pagina de registro")
     public void queEstoyEnLaPaginaDeRegistro() {
