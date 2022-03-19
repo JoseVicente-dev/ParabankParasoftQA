@@ -5,6 +5,7 @@ import co.com.sofka.page.pages.CustomerCareFormPage;
 import co.com.sofka.page.pages.HomePage;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.enums.CustomerCareForm;
+import co.com.sofka.util.enums.Seconds;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -31,7 +32,7 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 10, true, null);
+            homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
             homePage.goToCustomerCareForm();
 
         } catch (Exception exception) {
@@ -59,7 +60,7 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
             customerCareFormModel.setPhone(dataTable.get(CustomerCareForm.PHONE.getValue()));
             customerCareFormModel.setMessage(dataTable.get(CustomerCareForm.MESSAGE.getValue()));
 
-            customerCareFormPage = new CustomerCareFormPage(driver,10,true,customerCareFormModel);
+            customerCareFormPage = new CustomerCareFormPage(driver,Seconds.TEN_SECONDS.getValue(),true,customerCareFormModel);
             customerCareFormPage.fillCustomerCareForm();
 
 
@@ -87,7 +88,7 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 10, true, null);
+            homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
             homePage.goToCustomerCareForm();
 
         } catch (Exception exception) {
@@ -105,7 +106,7 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
             customerCareFormModel.setName(dataTable.get(CustomerCareForm.NAME.getValue()));
             customerCareFormModel.setMessage(dataTable.get(CustomerCareForm.MESSAGE.getValue()));
 
-            customerCareFormPage = new CustomerCareFormPage(driver,10,true,customerCareFormModel);
+            customerCareFormPage = new CustomerCareFormPage(driver,Seconds.TEN_SECONDS.getValue(),true,customerCareFormModel);
             customerCareFormPage.fillCustomerCareForm();
 
         } catch (Exception exception) {

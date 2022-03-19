@@ -14,7 +14,7 @@ Feature: Registrarse en la plataforma
       | zipCode | 2000 |
       | phoneNumber| 1234567890 |
       | ssn | 111-22-3333 |
-      | username | Mr.Dentist |
+      | username | UncleOfDarla |
       | password | Nemo |
       | confirmPassword | Nemo |
     Then se mostrara un mensaje que confirma mi registro en la plataforma
@@ -30,7 +30,7 @@ Feature: Registrarse en la plataforma
       | zipCode | 2000 |
       | phoneNumber| 1234567890 |
       | ssn | 111-22-3333 |
-      | username | Mr.Dentist |
+      | username | UncleOfDarla |
       | password | Nemo |
       | confirmPassword | Nemo |
     And incluya un Username de un usuario ya existente

@@ -5,6 +5,7 @@ import co.com.sofka.page.pages.HomePage;
 import co.com.sofka.page.pages.RegisterFormPage;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.enums.RegisterForm;
+import co.com.sofka.util.enums.Seconds;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -30,7 +31,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 10, true, null);
+            homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
             homePage.goToRegisterForm();
 
         } catch (Exception exception) {
@@ -63,7 +64,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             registerFormPageModel.setPassword(dataTable.get(RegisterForm.PASSWORD.getValue()));
             registerFormPageModel.setConfirmPassword(dataTable.get(RegisterForm.CONFIRM_PASSWORD.getValue()));
 
-            registerFormPage = new RegisterFormPage(driver, 10, true, registerFormPageModel);
+            registerFormPage = new RegisterFormPage(driver, Seconds.TEN_SECONDS.getValue(), true, registerFormPageModel);
             registerFormPage.fillRegisterForm();
 
         } catch (Exception exception) {
@@ -88,7 +89,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
             setUpWebDriver();
             generalSetUp();
 
-            homePage = new HomePage(driver, 10, true, null);
+            homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
             homePage.goToRegisterForm();
 
         } catch (Exception exception) {
@@ -126,7 +127,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
     public void incluyaUnUsernameDeUnUsuarioYaExistente() {
         try {
 
-            registerFormPage = new RegisterFormPage(driver, 10, true, registerFormPageModel);
+            registerFormPage = new RegisterFormPage(driver, Seconds.TEN_SECONDS.getValue(), true, registerFormPageModel);
             registerFormPage.fillRegisterForm();
 
         } catch (Exception exception) {

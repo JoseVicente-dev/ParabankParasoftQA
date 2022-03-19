@@ -6,6 +6,7 @@ import co.com.sofka.page.pages.HomePage;
 import co.com.sofka.page.pages.LoginErrorPage;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.enums.LoginForm;
+import co.com.sofka.util.enums.Seconds;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
@@ -44,7 +45,7 @@ public class LoginParabankStepDefinitions extends WebUI {
             homePageModel.setUsername(dataTable.get(LoginForm.USERNAME.getValue()));
             homePageModel.setPassword(dataTable.get(LoginForm.PASSWORD.getValue()));
 
-            homePage = new HomePage(driver, 10, true, homePageModel);
+            homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, homePageModel);
             homePage.login();
 
         } catch (Exception exception) {
@@ -57,7 +58,7 @@ public class LoginParabankStepDefinitions extends WebUI {
     @Then("podre consultar el estado de mis poductos")
     public void podreConsultarElEstadoDeMisPoductos() {
 
-        accountsOverviewPage = new AccountsOverviewPage(driver,5,false);
+        accountsOverviewPage = new AccountsOverviewPage(driver,Seconds.FIVE_SECONDS.getValue(),false);
         Assertions.assertEquals(forLoginAssertions().get(0), accountsOverviewPage.isLoginDone());
         quitDriver();
     }
@@ -74,7 +75,7 @@ public class LoginParabankStepDefinitions extends WebUI {
             homePageModel = new HomePageModel();
             homePageModel.setUsername(dataTable.get(LoginForm.USERNAME.getValue()));
 
-            homePage = new HomePage(driver, 10, true, homePageModel);
+            homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, homePageModel);
             homePage.login();
 
         } catch (Exception exception) {
@@ -88,7 +89,7 @@ public class LoginParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje de error y no podre ingrear al aplicativo")
     public void seMostraraUnMensajeDeErrorYNoPodreIngrearAlAplicativo() {
 
-        loginErrorPage = new LoginErrorPage(driver,5,false);
+        loginErrorPage = new LoginErrorPage(driver,Seconds.FIVE_SECONDS.getValue(),false);
         Assertions.assertEquals(forLoginAssertions().get(1),loginErrorPage.loginFailed());
 
         quitDriver();
