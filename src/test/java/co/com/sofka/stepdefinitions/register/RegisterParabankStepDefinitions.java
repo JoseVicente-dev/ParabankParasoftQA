@@ -3,7 +3,6 @@ package co.com.sofka.stepdefinitions.register;
 import co.com.sofka.model.RegisterFormPageModel;
 import co.com.sofka.page.pages.HomePage;
 import co.com.sofka.page.pages.RegisterFormPage;
-import co.com.sofka.page.pages.CreatedUserPage;
 import co.com.sofka.stepdefinitions.setup.WebUI;
 import co.com.sofka.util.enums.RegisterForm;
 import io.cucumber.java.en.Given;
@@ -22,7 +21,7 @@ public class RegisterParabankStepDefinitions extends WebUI {
     HomePage homePage;
     RegisterFormPageModel registerFormPageModel;
     RegisterFormPage registerFormPage;
-    CreatedUserPage registeredUserPage;
+
 
     @Given("que estoy en la pagina de registro de la plataforma")
     public void queEstoyEnLaPaginaDeRegistroDeLaPlataforma() {
@@ -77,8 +76,8 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Then("se mostrara un mensaje que confirma mi registro en la plataforma")
     public void seMostraraUnMensajeQueConfirmaMiRegistroEnLaPlataforma() {
 
-        registeredUserPage = new CreatedUserPage(driver,5,false);
-        Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()).get(0), registeredUserPage.isRegistrationDone(driver));
+
+        Assertions.assertEquals(forRegisterAssertions(registerFormPageModel.getUsername()).get(0), registerFormPage.isRegistrationDone());
         quitDriver();
     }
 

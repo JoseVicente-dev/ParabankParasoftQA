@@ -42,6 +42,9 @@ public class CustomerCarePage extends CommonActionOnPages {
     private WebElement sendToCustomerCareBtn;
 
     //For assertions
+    @FindBy(css = "#rightPanel")
+    @CacheLookup
+    private WebElement assertionsThankYouMessage;
 
 
     //Funcionalidades del Page

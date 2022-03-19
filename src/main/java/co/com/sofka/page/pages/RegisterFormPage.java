@@ -79,6 +79,10 @@ public class RegisterFormPage extends CommonActionOnPages {
     @FindBy(id="customer.username.errors")
     private WebElement assertionsUsernameError;
 
+    @FindBy(css = ".title")
+    private WebElement assertionsUserRegistered;
+
+
     //Funcionalidades del Page
     public void fillRegisterForm(){
 
@@ -144,6 +148,11 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     public String errorUserNameAlreadyExists(){
         return assertionsUsernameError.getText().trim();
+    }
+
+    public String isRegistrationDone(){
+
+        return assertionsUserRegistered.getText().trim();
     }
 
 
