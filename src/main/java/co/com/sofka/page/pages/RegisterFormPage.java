@@ -3,7 +3,6 @@ package co.com.sofka.page.pages;
 import co.com.sofka.model.RegisterFormPageModel;
 import co.com.sofka.page.common.CommonActionOnPages;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -15,10 +14,9 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     private RegisterFormPageModel registerFormPageModel;
 
-    public RegisterFormPage(WebDriver driver, RegisterFormPageModel registerFormPageModel) {
+    public RegisterFormPage(WebDriver driver) {
         super(driver);
-        PageFactoryInitElement(driver,this);
-        this.registerFormPageModel = registerFormPageModel;
+        PageFactoryInitElement(driver, this);
     }
 
     public RegisterFormPage(WebDriver driver, int seconds, boolean isExplicitWait, RegisterFormPageModel registerFormPageModel) {
@@ -81,7 +79,6 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     @FindBy(css = ".title")
     private WebElement assertionsUserRegistered;
-
 
     //Funcionalidades del Page
     public void fillRegisterForm(){
@@ -154,6 +151,4 @@ public class RegisterFormPage extends CommonActionOnPages {
 
         return assertionsUserRegistered.getText().trim();
     }
-
-
 }

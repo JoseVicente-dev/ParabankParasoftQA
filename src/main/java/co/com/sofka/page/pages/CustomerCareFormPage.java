@@ -8,14 +8,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CustomerCareFormPage extends CommonActionOnPages {
 
     private static final Logger LOGGER = Logger.getLogger(CustomerCareFormPage.class);
 
     CustomerCareFormModel customerCareFormModel;
+
+    public CustomerCareFormPage(WebDriver driver) {
+        super(driver);
+        PageFactoryInitElement(driver, this);
+    }
 
     public CustomerCareFormPage(WebDriver driver, int seconds, boolean isExplicitWait, CustomerCareFormModel customerCareFormModel) {
         super(driver, seconds, isExplicitWait);
@@ -53,7 +55,6 @@ public class CustomerCareFormPage extends CommonActionOnPages {
 
     @FindBy(id = "phone.errors")
     private WebElement assertionsPhoneError;
-
 
     //Funcionalidades del Page
     public void fillCustomerCareForm() {

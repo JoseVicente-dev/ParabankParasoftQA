@@ -11,12 +11,15 @@ public class LoginErrorPage extends CommonActionOnPages {
 
     private static final Logger LOGGER = Logger.getLogger(LoginErrorPage.class);
 
+    public LoginErrorPage(WebDriver driver) {
+        super(driver);
+        PageFactoryInitElement(driver, this);
+    }
 
     public LoginErrorPage(WebDriver driver, int seconds, boolean isExplicitWait) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver,this);
+        PageFactoryInitElement(driver, this);
     }
-
 
     //For login error assertions
     @FindBy(css = ".error")
@@ -24,10 +27,6 @@ public class LoginErrorPage extends CommonActionOnPages {
     private WebElement assertionsLoginErrorMessage;
 
     public String loginFailed() {
-
         return assertionsLoginErrorMessage.getText().trim();
-
     }
-
-
 }

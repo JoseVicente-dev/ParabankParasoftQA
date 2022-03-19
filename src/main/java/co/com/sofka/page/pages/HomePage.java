@@ -14,10 +14,9 @@ public class HomePage extends CommonActionOnPages {
 
     private HomePageModel homePageModel;
 
-    public HomePage(WebDriver driver, HomePageModel homePageModel) {
+    public HomePage(WebDriver driver) {
         super(driver);
         PageFactoryInitElement(driver, this);
-        this.homePageModel = homePageModel;
     }
 
     public HomePage(WebDriver driver, int seconds, boolean isExplicitWait, HomePageModel homePageModel) {
@@ -55,7 +54,7 @@ public class HomePage extends CommonActionOnPages {
         clickOnWithExplicitWait(registerLink);
     }
 
-    public void goToCustomerCareForm(){
+    public void goToCustomerCareForm() {
         scrollOnWithExplicitWait(customerCareLink);
         clickOnWithExplicitWait(customerCareLink);
 
@@ -74,8 +73,8 @@ public class HomePage extends CommonActionOnPages {
 
         if (homePageModel.getPassword() != null) {
             typeOnWithExplicitWait(password, homePageModel.getPassword());
-        }else {
-            typeOnWithExplicitWait(password,"");
+        } else {
+            typeOnWithExplicitWait(password, "");
         }
 
         scrollOnWithExplicitWait(loginBtn);
