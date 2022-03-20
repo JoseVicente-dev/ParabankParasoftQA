@@ -16,12 +16,12 @@ public class HomePage extends CommonActionOnPages {
 
     public HomePage(WebDriver driver) {
         super(driver);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     public HomePage(WebDriver driver, int seconds, boolean isExplicitWait, HomePageModel homePageModel) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
         this.homePageModel = homePageModel;
     }
 

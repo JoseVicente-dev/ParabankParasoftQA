@@ -1,7 +1,0 @@
-
-R
-java:S1854"<Remove this useless assignment to local variable "RUTA_ABS".(ì’Éû
-C
-java:S1481"-Remove this unused "RUTA_ABS" local variable.(ì’Éû
-N	java:S106"9Replace this use of System.out or System.err by a logger.( —ÿÒ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ÈŒ“„

@@ -16,6 +16,7 @@ public class WebUI {
 
     protected WebDriver driver;
 
+
     protected void setUpWebDriver() {
         System.setProperty(WEBDRIVER_CHROME_DRIVER, WEBDRIVER_CHROME_DRIVER_PATH);//Se configura una variable del sistema
     }

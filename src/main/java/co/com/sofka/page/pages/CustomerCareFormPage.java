@@ -16,12 +16,12 @@ public class CustomerCareFormPage extends CommonActionOnPages {
 
     public CustomerCareFormPage(WebDriver driver) {
         super(driver);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     public CustomerCareFormPage(WebDriver driver, int seconds, boolean isExplicitWait, CustomerCareFormModel customerCareFormModel) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
         this.customerCareFormModel = customerCareFormModel;
     }
 
@@ -91,12 +91,12 @@ public class CustomerCareFormPage extends CommonActionOnPages {
     }
 
     public String isCustomerCareMessageSend() {
-        return assertionsThankYouMessage.getText().trim();
+        return getTextWithExplicitWait(assertionsThankYouMessage);
     }
 
     public String errorContactInformationIsRequired() {
 
-        return  assertionsEmailError.getText().trim() +" "+ assertionsPhoneError.getText().trim();
+        return getTextWithExplicitWait( assertionsEmailError) +" "+ getTextWithExplicitWait(assertionsPhoneError);
 
     }
 

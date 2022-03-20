@@ -1,4 +1,4 @@
-package co.com.sofka.stepdefinitions.register;
+package co.com.sofka.stepdefinitions.login;
 
 import co.com.sofka.model.HomePageModel;
 import co.com.sofka.page.pages.AccountsOverviewPage;
@@ -58,7 +58,7 @@ public class LoginParabankStepDefinitions extends WebUI {
     @Then("podre consultar el estado de mis poductos")
     public void podreConsultarElEstadoDeMisPoductos() {
 
-        accountsOverviewPage = new AccountsOverviewPage(driver,Seconds.FIVE_SECONDS.getValue(),false);
+        accountsOverviewPage = new AccountsOverviewPage(driver,Seconds.TEN_SECONDS.getValue(),true);
         Assertions.assertEquals(forLoginAssertions().get(0), accountsOverviewPage.isLoginDone());
         quitDriver();
     }
@@ -79,23 +79,23 @@ public class LoginParabankStepDefinitions extends WebUI {
             homePage.login();
 
         } catch (Exception exception) {
-            quitDriver();
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
+            quitDriver();
         }
     }
 
     @Then("se mostrara un mensaje de error y no podre ingrear al aplicativo")
     public void seMostraraUnMensajeDeErrorYNoPodreIngrearAlAplicativo() {
 
-        loginErrorPage = new LoginErrorPage(driver,Seconds.FIVE_SECONDS.getValue(),false);
+        loginErrorPage = new LoginErrorPage(driver,Seconds.TEN_SECONDS.getValue(),true);
         Assertions.assertEquals(forLoginAssertions().get(1),loginErrorPage.loginFailed());
         quitDriver();
     }
 
     private List<String> forLoginAssertions() {
         List<String> loginExpectedResults = new ArrayList<>();
-        loginExpectedResults.add("Accounts Overview");
+        loginExpectedResults.add("Account Services");
         loginExpectedResults.add("Please enter a username and password.");
         return loginExpectedResults;
     }

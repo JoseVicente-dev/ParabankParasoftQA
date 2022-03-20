@@ -19,9 +19,10 @@ import java.util.Map;
 public class RegisterParabankStepDefinitions extends WebUI {
 
     private static final Logger LOGGER = Logger.getLogger(RegisterParabankStepDefinitions.class);
-    HomePage homePage;
-    RegisterFormPageModel registerFormPageModel;
-    RegisterFormPage registerFormPage;
+
+    private HomePage homePage;
+    private RegisterFormPageModel registerFormPageModel;
+    private RegisterFormPage registerFormPage;
 
     @Given("que estoy en la pagina de registro de la plataforma")
     public void queEstoyEnLaPaginaDeRegistroDeLaPlataforma() {

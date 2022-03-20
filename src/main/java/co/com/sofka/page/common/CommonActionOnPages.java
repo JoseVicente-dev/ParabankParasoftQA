@@ -79,7 +79,7 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     //Init POM with Page Factory
-    protected void PageFactoryInitElement(WebDriver driver, Object page) {
+    protected void pageFactoryInitElement(WebDriver driver, Object page) {
         PageFactory.initElements(driver, page);
     }
 
@@ -169,18 +169,18 @@ public class CommonActionOnPages extends BaseSikulix {
     }
 
     protected String getText(By localizador) {
-        return driver.findElement(localizador).getText();
+        return driver.findElement(localizador).getText().trim();
     }
 
     protected String getText(WebElement webElement) {
-        return webElement.getText();
+        return webElement.getText().trim();
     }
 
     protected String getTextWithExplicitWait(By localizador) {
-        return webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)).getText();
+        return webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(localizador)).getText().trim();
     }
 
     protected String getTextWithExplicitWait(WebElement webElement) {
-        return webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)).getText();
+        return webDriverExplicitWait.until(ExpectedConditions.elementToBeClickable(webElement)).getText().trim();
     }
 }

@@ -16,12 +16,12 @@ public class RegisterFormPage extends CommonActionOnPages {
 
     public RegisterFormPage(WebDriver driver) {
         super(driver);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     public RegisterFormPage(WebDriver driver, int seconds, boolean isExplicitWait, RegisterFormPageModel registerFormPageModel) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver,this);
+        pageFactoryInitElement(driver,this);
         this.registerFormPageModel = registerFormPageModel;
     }
 
@@ -144,11 +144,10 @@ public class RegisterFormPage extends CommonActionOnPages {
     }
 
     public String errorUserNameAlreadyExists(){
-        return assertionsUsernameError.getText().trim();
+        return getTextWithExplicitWait(assertionsUsernameError);
     }
 
     public String isRegistrationDone(){
-
-        return assertionsUserRegistered.getText().trim();
+        return getTextWithExplicitWait(assertionsUserRegistered);
     }
 }

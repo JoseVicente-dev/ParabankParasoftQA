@@ -1,4 +1,4 @@
-package co.com.sofka.stepdefinitions.register;
+package co.com.sofka.stepdefinitions.customercare;
 
 import co.com.sofka.model.CustomerCareFormModel;
 import co.com.sofka.page.pages.CustomerCareFormPage;

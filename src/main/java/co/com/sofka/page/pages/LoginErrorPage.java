@@ -13,12 +13,12 @@ public class LoginErrorPage extends CommonActionOnPages {
 
     public LoginErrorPage(WebDriver driver) {
         super(driver);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     public LoginErrorPage(WebDriver driver, int seconds, boolean isExplicitWait) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     //For login error assertions
@@ -27,6 +27,6 @@ public class LoginErrorPage extends CommonActionOnPages {
     private WebElement assertionsLoginErrorMessage;
 
     public String loginFailed() {
-        return assertionsLoginErrorMessage.getText().trim();
+        return getTextWithExplicitWait(assertionsLoginErrorMessage);
     }
 }

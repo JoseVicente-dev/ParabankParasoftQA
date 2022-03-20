@@ -12,21 +12,21 @@ public class AccountsOverviewPage extends CommonActionOnPages {
 
     public AccountsOverviewPage(WebDriver driver) {
         super(driver);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     public AccountsOverviewPage(WebDriver driver, int seconds, boolean isExplicitWait) {
         super(driver, seconds, isExplicitWait);
-        PageFactoryInitElement(driver, this);
+        pageFactoryInitElement(driver, this);
     }
 
     //For login assertions
-    @FindBy(css = ".title")
+    @FindBy(css = "h2")
     @CacheLookup
     private WebElement titleAccountsOverview;
 
     public String isLoginDone() {
-        return titleAccountsOverview.getText().trim();
+        return getTextWithExplicitWait(titleAccountsOverview);
     }
 
 }
