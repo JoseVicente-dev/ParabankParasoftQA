@@ -17,18 +17,20 @@ public class WebUI {
     protected WebDriver driver;
 
 
-    protected void setUpWebDriver() {
+    private void setUpWebDriver() {
         System.setProperty(WEBDRIVER_CHROME_DRIVER, WEBDRIVER_CHROME_DRIVER_PATH);//Se configura una variable del sistema
     }
 
     protected void generalSetUp() { //Inicializar el navegador
 
+        setUpLog4j2();
+        setUpWebDriver();
         driver = new ChromeDriver();
         driver.get(PARABANK_PARASOFT_URL);//Le indica la ruta donde inicializa
         driver.manage().window().maximize();//Que inicie maximizado. Se pueden poner otras opciones, incluso definir un tamaño determinado, que limpie cookies, etc
     }
 
-    protected void setUpLog4j2() {
+    private void setUpLog4j2() {
         PropertyConfigurator.configure(USER_DIR.value() + LOG4J_PROPERTIES_FILE_PATH.getValue());
     }
 

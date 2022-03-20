@@ -27,8 +27,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
     @Given("que estoy en la seccion Custom Care")
     public void queEstoyEnLaSeccionCustomCare() {
         try {
-            setUpLog4j2();
-            setUpWebDriver();
             generalSetUp();
 
             homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
@@ -81,8 +79,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
     @Given("que estoy en Custom Care")
     public void queEstoyEnCustomCare() {
         try {
-            setUpLog4j2();
-            setUpWebDriver();
             generalSetUp();
 
             homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);

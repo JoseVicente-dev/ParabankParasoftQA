@@ -36,9 +36,6 @@ public class LoginParabankStepDefinitions extends WebUI {
         // For other transformations you can register a DataTableType.
 
         try {
-
-            setUpLog4j2();
-            setUpWebDriver();
             generalSetUp();
 
             homePageModel = new HomePageModel();
@@ -67,9 +64,6 @@ public class LoginParabankStepDefinitions extends WebUI {
     @When("ingrese credenciales omitiendo el password")
     public void ingreseCredencialesOmitiendoElPassword(Map<String, String> dataTable) {
         try {
-
-            setUpLog4j2();
-            setUpWebDriver();
             generalSetUp();
 
             homePageModel = new HomePageModel();

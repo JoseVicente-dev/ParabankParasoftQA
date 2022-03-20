@@ -27,8 +27,6 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Given("que estoy en la pagina de registro de la plataforma")
     public void queEstoyEnLaPaginaDeRegistroDeLaPlataforma() {
         try {
-            setUpLog4j2();
-            setUpWebDriver();
             generalSetUp();
 
             homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
@@ -85,8 +83,6 @@ public class RegisterParabankStepDefinitions extends WebUI {
     @Given("que estoy en la pagina de registro")
     public void queEstoyEnLaPaginaDeRegistro() {
         try {
-            setUpLog4j2();
-            setUpWebDriver();
             generalSetUp();
 
             homePage = new HomePage(driver, Seconds.TEN_SECONDS.getValue(), true, null);
