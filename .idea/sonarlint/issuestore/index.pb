@@ -1,8 +1,4 @@
 
-k
-;src/main/java/co/com/sofka/model/CustomerCareFormModel.java,4\1\4118f5d55d848d6c4597a1e2c229380073bb164b
-k
-;src/main/java/co/com/sofka/model/RegisterFormPageModel.java,0\1\0145ad3d08332c51e6de523af641e4dbfd11e8f6
 g
 7src/main/java/co/com/sofka/page/common/BaseSikulix.java,5\7\57be3928411944074ae0b50278592419d48fc18f
 k
@@ -17,19 +13,7 @@ b
 2src/main/java/co/com/sofka/util/enums/Seconds.java,9\7\97e57a62b31019aa448d32f23beeaca35d858b4d
 i
 9src/test/java/co/com/sofka/runners/LoginParabankTest.java,b\9\b98052c55561f128082a1b1380227f9897228d76
-c
-3src/main/java/co/com/sofka/model/HomePageModel.java,7\9\79ccc51b688152a07687b1e08763350be9cba37e
-o
-?src/main/java/co/com/sofka/page/pages/CustomerCareFormPage.java,6\3\6367a00706953ed32efcddfd37c88830cc1d2ab5
 p
 @src/test/java/co/com/sofka/runners/CustomerCareParabankTest.java,c\6\c66dc22a66fb91aa99d2cad465e67fe676d9708e
 l
 <src/test/java/co/com/sofka/runners/RegisterParabankTest.java,4\4\44a0be3356be8f7d534936eec019696c6274bb0e
-i
-9src/main/java/co/com/sofka/page/pages/LoginErrorPage.java,0\0\006d0add31e4da9b68a7f9babe6402b58edc3032
-k
-;src/main/java/co/com/sofka/page/pages/RegisterFormPage.java,7\a\7a588821d161f9dd5d89932881fb16bbcaab1422
-o
-?src/main/java/co/com/sofka/page/common/CommonActionOnPages.java,0\b\0b21280eac540095f7519ffa4f36801c9b3eb719
-c
-3src/main/java/co/com/sofka/page/pages/HomePage.java,2\d\2d8cc6bff07c08ee7e606f72d5b083db81d85a7e

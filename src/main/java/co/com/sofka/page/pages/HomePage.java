@@ -71,11 +71,8 @@ public class HomePage extends CommonActionOnPages {
         clearOnWithExplicitWait(password);
         clickOnWithExplicitWait(password);
 
-        if (homePageModel.getPassword() != null) {
-            typeOnWithExplicitWait(password, homePageModel.getPassword());
-        } else {
-            typeOnWithExplicitWait(password, "");
-        }
+        String passwordText = homePageModel.getPassword() != null ? homePageModel.getPassword() : "";
+        typeOnWithExplicitWait(password,passwordText);
 
         scrollOnWithExplicitWait(loginBtn);
         doSubmitWithExplicitWait(loginBtn);

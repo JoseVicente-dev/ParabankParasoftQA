@@ -66,20 +66,16 @@ public class CustomerCareFormPage extends CommonActionOnPages {
         scrollOnWithExplicitWait(email);
         clearOnWithExplicitWait(email);
         clickOnWithExplicitWait(email);
-        if (customerCareFormModel.getEmail() != null) {
-            typeOnWithExplicitWait(email, customerCareFormModel.getEmail());
-        } else {
-            typeOnWithExplicitWait(email, "");
-        }
+
+        String emailText = customerCareFormModel.getEmail() != null ? customerCareFormModel.getEmail() : "";
+        typeOnWithExplicitWait(email, emailText);
 
         scrollOnWithExplicitWait(phone);
         clearOnWithExplicitWait(phone);
         clickOnWithExplicitWait(phone);
-        if (customerCareFormModel.getEmail() != null) {
-            typeOnWithExplicitWait(phone, customerCareFormModel.getPhone());
-        } else {
-            typeOnWithExplicitWait(email, "");
-        }
+
+        String phoneText = customerCareFormModel.getPhone() != null? customerCareFormModel.getPhone() : "";
+        typeOnWithExplicitWait(phone, phoneText);
 
         scrollOnWithExplicitWait(message);
         clearOnWithExplicitWait(message);
@@ -96,7 +92,7 @@ public class CustomerCareFormPage extends CommonActionOnPages {
 
     public String errorContactInformationIsRequired() {
 
-        return getTextWithExplicitWait( assertionsEmailError) +" "+ getTextWithExplicitWait(assertionsPhoneError);
+        return getTextWithExplicitWait(assertionsEmailError) + " " + getTextWithExplicitWait(assertionsPhoneError);
 
     }
 

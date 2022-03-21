@@ -64,7 +64,6 @@ public class CustomerCareParabankStepDefinitions extends WebUI {
             Assertions.fail(exception.getMessage(), exception);
             LOGGER.error(exception.getMessage(), exception);
         }
-
     }
 
     @Then("se confirmara el envio de la misma")
